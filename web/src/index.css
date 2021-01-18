@@ -13,13 +13,27 @@ code {
 }
 
 :root {
-  --color-background: #f0f0f7;
+  --color-background: #f1f1f9;
+  --color-background-dark: #e0e0e8;
+  --color-blue-light: #72beda;
+  --color-blue: #36a3ca;
+  --color-blue-dark: #25728d;
+  --color-red-light: #f13535;
+  --color-red: #e60023;
+  --color-red-dark: #c4001d;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+*,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 
 html,
@@ -30,4 +44,9 @@ body,
 
 body {
   background: var(--color-background);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
 }
