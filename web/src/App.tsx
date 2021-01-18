@@ -1,10 +1,12 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import { Header } from "./components";
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="app">
+      <Header cartNumber={12} />
     </div>
   );
 }
