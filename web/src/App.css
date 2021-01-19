@@ -11,7 +11,7 @@
   max-width: 1440px;
 }
 
-.link-unset {
+.link {
   text-decoration: none;
   outline: none;
   cursor: pointer;
