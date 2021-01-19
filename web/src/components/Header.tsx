@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
 
@@ -10,17 +11,17 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({ cartNumber }) => {
   return (
     <header className="container header">
-      <a href="#" className="link-unset logo header-logo">
+      <Link to="/" className="link logo header-logo">
         LOGO
-      </a>
+      </Link>
       <div className="header-links-container">
-        <a href="#" className="link-unset header-link">
+        <Link to="/" className="link header-link">
           <FaShoppingCart />{" "}
           <span className="header-cart-number">{cartNumber}</span>
-        </a>
-        <a href="#" className="link-unset header-link">
+        </Link>
+        <Link to="/" className="link header-link">
           <FaUserAlt />
-        </a>
+        </Link>
       </div>
     </header>
   );

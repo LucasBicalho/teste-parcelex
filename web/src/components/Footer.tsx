@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
+
 import { FaFacebookSquare, FaInstagram, FaTwitterSquare } from "react-icons/fa";
 
 const Footer: React.FC = () => {
@@ -9,33 +11,33 @@ const Footer: React.FC = () => {
         <div className="logo">LOGO</div>
 
         <div className="footer-links-container">
-          <a href="#" className="footer-link">
+          <Link to="/" className="footer-link">
             Sobre Nós
-          </a>
-          <a href="#" className="footer-link">
+          </Link>
+          <Link to="/" className="footer-link">
             Perguntas Frequentes
-          </a>
-          <a href="#" className="footer-link">
+          </Link>
+          <Link to="/" className="footer-link">
             Termos e condições
-          </a>
-          <a href="#" className="footer-link">
+          </Link>
+          <Link to="/" className="footer-link">
             Pagamento Seguro
-          </a>
-          <a href="#" className="footer-link">
+          </Link>
+          <Link to="/" className="footer-link">
             Contato
-          </a>
+          </Link>
         </div>
 
         <div className="footer-socials-container">
-          <a href="#" className="footer-social">
+          <Link to="/" className="footer-social">
             <FaFacebookSquare />
-          </a>
-          <a href="#" className="footer-social">
+          </Link>
+          <Link to="/" className="footer-social">
             <FaInstagram />
-          </a>
-          <a href="#" className="footer-social">
+          </Link>
+          <Link to="/" className="footer-social">
             <FaTwitterSquare />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
