@@ -1,5 +1,6 @@
 import express from "express";
 import Database from "./config/database";
+import ProductRouter from "./resources/product/routes";
 import cors from "cors";
 
 const PORT = 3333;
@@ -24,6 +25,7 @@ app.use((_, response, next) => {
   response.header("Access-Control-Allow-Origin", "*");
   next();
 });
+app.use(ProductRouter);
 
 process.once("SIGUSR2", () =>
   database.closeConnection("nodemon restart", () =>
