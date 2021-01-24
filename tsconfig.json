@@ -28,9 +28,9 @@
   },
   "include": [
     "api/**/*.ts",
-    "api/*.ts",
+    "api/**/*.tsx",
     "web/**/*.ts",
-    "web/*.ts"
+    "web/**/*.tsx"
   ],
   "exclude": [
     "node_modules"
