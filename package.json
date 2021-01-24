@@ -5,14 +5,13 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "start:server:tsnode": "nodemon --exec ts-node --project ./node.tsconfig.json ./api/server.ts",
     "webpack:server": "webpack --config webpack.server.js --watch",
     "nodemon:server": "nodemon ./dist/bundle_server.js",
     "start:server": "npm-run-all --parallel webpack:server nodemon:server",
-    "start:server:tsnode": "nodemon --exec ts-node --project ./node.tsconfig.json ./api/server.ts",
-    "start:react": "react-scripts start",
-    "build:react": "react-scripts build",
-    "test:react": "react-scripts test",
-    "eject:react": "react-scripts eject"
+    "webpack:client": "webpack --config webpack.client.js --watch",
+    "nodemon:client": "nodemon ./dist/public/bundle_client.js",
+    "start:client": "npm-run-all --parallel webpack:client nodemon:client"
   },
   "keywords": [],
   "author": "",
@@ -26,14 +25,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-react": "^7.12.10",
     "@types/cors": "^2.8.9",
     "@types/express": "^4.17.11",
     "@types/http-status": "^1.1.2",
