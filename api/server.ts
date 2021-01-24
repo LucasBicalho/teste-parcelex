@@ -1,7 +1,8 @@
 import express from "express";
+import cors from "cors";
+
 import Database from "./config/database";
 import ProductRouter from "./resources/product/routes";
-import cors from "cors";
 
 const PORT = 3333;
 
