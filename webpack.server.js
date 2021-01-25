@@ -2,7 +2,7 @@ const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
-  entry: "./api/server.ts",
+  entry: "./src/api/server.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle_server.js",
@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\\api\\.*\.tsx?$/,
+        test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
@@ -19,6 +19,6 @@ module.exports = {
   },
   externals: [nodeExternals()],
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".jsx", ".js", ".css"],
   },
 };
