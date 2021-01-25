@@ -5,13 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start:server:tsnode": "nodemon --exec ts-node --project ./node.tsconfig.json ./api/server.ts",
     "webpack:server": "webpack --config webpack.server.js --watch",
-    "nodemon:server": "nodemon ./dist/bundle_server.js",
-    "start:server": "npm-run-all --parallel webpack:server nodemon:server",
     "webpack:client": "webpack --config webpack.client.js --watch",
-    "nodemon:client": "nodemon ./dist/public/bundle_client.js",
-    "start:client": "npm-run-all --parallel webpack:client nodemon:client"
+    "nodemon:server": "nodemon ./dist/bundle_server.js",
+    "start": "npm-run-all --parallel webpack:* nodemon:server"
   },
   "keywords": [],
   "author": "",
@@ -40,9 +37,7 @@
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
     "style-loader": "^2.0.0",
-    "to-string-loader": "^1.1.6",
     "ts-loader": "^8.0.14",
-    "ts-node": "^9.1.1",
     "typescript": "^4.1.3",
     "webpack": "^5.17.0",
     "webpack-cli": "^4.4.0",
