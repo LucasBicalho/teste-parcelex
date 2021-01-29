@@ -1,0 +1,12 @@
+.content {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1560px) {
+  .content {
+    align-items: center;
+  }
+}
