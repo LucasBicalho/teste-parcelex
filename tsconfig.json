@@ -19,19 +19,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "types": [
-      "node"
-    ]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ],
   "compileOnSave": true,
   "buildOnSave": true
