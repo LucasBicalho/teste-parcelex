@@ -15,10 +15,14 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/i,
+        use: "ignore-loader",
+      },
     ],
   },
   externals: [nodeExternals()],
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js", ".css"],
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
   },
 };
