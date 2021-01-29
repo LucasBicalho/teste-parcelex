@@ -1,20 +1,13 @@
-import React from "react";
+import React, { createContext } from "react";
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
 
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 
-const App: React.FC = () => {
+import HomePage from "./pages/HomePage";
+
+
+const App: React.FC<AppContextType> = ({ ENV_VAR, productsContext }) => {
   return (
-    <div className="app">
-      <BrowserRouter>
-        <div className="app">
-          <Header cartNumber={0} />
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </div>
+        <HomePage />
   );
 };
 
