@@ -1,0 +1,128 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 4px;
+  z-index: 10;
+  height: 68px;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 0 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+}
+
+.navbar-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 100%;
+  padding: 0 2.5rem;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-link:hover {
+  background-color: #eee;
+}
+
+.navbar-link:active {
+  background-color: var(--color-background-dark);
+}
+
+.navbar-link.selected {
+  background-color: var(--color-red-light);
+  color: white;
+}
+
+.navbar-link.selected:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.navbar-open-button {
+  height: 68px;
+  width: 68px;
+  margin-left: 1rem;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  display: none;
+}
+
+.navbar.dropdown {
+  border-radius: 4px 4px 0 0;
+}
+
+.navbar-dropdown-menu {
+  position: absolute;
+  top: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(230, 230, 235, 1);
+  width: 100%;
+  list-style: none;
+  padding: 1rem 0;
+  width: 100%;
+  z-index: 9;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 0 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar-dropdown-link-container {
+  width: 100%;
+  height: 3.5rem;
+}
+
+.navbar-dropdown-link-container .navbar-link {
+  font-size: 1rem;
+}
+
+.navbar-dropdown-link-container .navbar-link:hover {
+  background-color: rgba(220, 220, 225, 1);
+}
+
+.navbar-dropdown-link-container .navbar-link:active {
+  background-color: rgba(205, 205, 210, 1);
+}
+
+.navbar-dropdown-link-container .navbar-link.selected {
+  background-color: var(--color-red-light);
+  color: white;
+}
+
+@media screen and (max-width: 1080px) {
+  .navbar-link {
+    padding: 0 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .navbar-menu-hide {
+    display: none;
+  }
+
+  .navbar-open-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
