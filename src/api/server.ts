@@ -3,6 +3,7 @@ import cors from "cors";
 
 import Database from "./config/database";
 import ProductRouter from "./resources/product/routes";
+import { getAppHTML } from ".";
 
 const PORT = 3333;
 
@@ -20,12 +21,19 @@ database
     console.log("erro ao conectar no banco de dados\nErro: " + error)
   );
 
+app.use(express.static("dist/public"));
 app.use(cors());
 app.use(express.json());
 app.use((_, response, next) => {
   response.header("Access-Control-Allow-Origin", "*");
   next();
 });
+
+app.get("/", async (_, response) => {
+  const html = await getAppHTML();
+  response.send(html);
+});
+
 app.use(ProductRouter);
 
 process.once("SIGUSR2", () =>
