@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+
+import App, { ENV } from "../App";
 
 ReactDOM.hydrate(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App ENV_VAR={ENV.client} />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
