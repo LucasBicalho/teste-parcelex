@@ -1,6 +1,7 @@
 import React, { createContext } from "react";
 import "./App.css";
 
+import ProductsContext from "./contexts/Products";
 
 import HomePage from "./pages/HomePage";
 
@@ -12,6 +13,7 @@ export enum ENV {
 
 type AppContextType = {
   ENV_VAR: ENV;
+  productsContext: ProductsContext;
 };
 
 export const AppContext = createContext<AppContextType>({
@@ -19,10 +21,12 @@ export const AppContext = createContext<AppContextType>({
   productsContext: new ProductsContext(),
 });
 
-const App: React.FC<AppContextType> = ({ ENV_VAR }) => {
+const App: React.FC<AppContextType> = ({ ENV_VAR, productsContext }) => {
   return (
-    <AppContext.Provider value={{ ENV_VAR }}>
+    <AppContext.Provider value={{ ENV_VAR, productsContext }}>
+      <productsContext.Provider value={productsContext.products}>
         <HomePage />
+      </productsContext.Provider>
     </AppContext.Provider>
   );
 };
