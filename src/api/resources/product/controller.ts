@@ -1,14 +1,14 @@
-import { Request, Response } from "express";
-import httpStatus from "http-status";
-
+import ProductType from "../../../types/Product";
 import ProductModel from "./model";
 
 class ProductController {
-  async getAll(request: Request, response: Response) {
-    const { limit } = request.query;
-    let filter = limit ? { $limit: limit } : {};
-    const products = await ProductModel.find(filter);
-    return response.status(httpStatus.OK).json({ products });
+  async getAll(filter = {}, projection: any = null, options = {}) {
+    const products: Array<ProductType> = await ProductModel.find(
+      filter,
+      projection,
+      options
+    );
+    return products;
   }
 }
 
