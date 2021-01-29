@@ -1,5 +1,5 @@
 class Template {
-  getHTML(body: string, styles: string, scripts = "") {
+  getHTML(body = "", styles = "", scripts = "") {
     const html = `
       <!DOCTYPE html>
       <html lang="en">
